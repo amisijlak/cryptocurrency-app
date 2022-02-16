@@ -9,9 +9,8 @@ import json
 
 # Initialize the app
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
-apikey = 'D9353418-6F22-4241-AF44-59AA781C65FD'
+createdApikey = 'D9353418-6F22-4241-AF44-59AA781C65FD'
 server = app.server
-
 
 app.title = 'Africa Data School Crypto App'
 app.description = "This is a test app for Africa Data School August 2021 Cohort"
@@ -161,7 +160,7 @@ app.layout = html.Div(children=[
         Input(component_id='time', component_property='value')
     ]
 )
-def update_content(currency, time_change, apikey=apikey):
+def update_content(currency, time_change, apikey=createdApikey):
     """This Function fetches the data from Coin API and returns the price_close,
     price_high, price_open, volume traded and the graph.
     """
@@ -198,5 +197,6 @@ def update_content(currency, time_change, apikey=apikey):
 
     return price_open, price_close, price_high, volume_traded, fig
 
+
 if __name__ == '__main__':
-    app.run_server(debug=True, port=806)
+    app.run_server(debug=False, port=806)
