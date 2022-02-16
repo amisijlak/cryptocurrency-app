@@ -1,1 +1,1 @@
-web: gunicorn crypto_app:server
+web: gunicorn classwork:server
